@@ -29,6 +29,7 @@ class ShareViewController: SLComposeServiceViewController {
             deck.title = "Deck \(i)"
             userDecks.append(deck)
         }
+        selectedDeck = userDecks.first
     }
     
     private func setupUI() {
@@ -70,7 +71,7 @@ class ShareViewController: SLComposeServiceViewController {
     override func configurationItems() -> [Any]! {
         if let deck = SLComposeSheetConfigurationItem() {
             deck.title = "Selected Deck"
-            deck.value = "Deck Title"
+            deck.value = selectedDeck?.title
             deck.tapHandler = {
                 let vc = ShareSelectViewController()
                 vc.userDecks = self.userDecks

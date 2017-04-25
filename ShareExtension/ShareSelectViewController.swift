@@ -17,6 +17,7 @@ class ShareSelectViewController: UIViewController {
         let tableView = UITableView(frame: self.view.frame)
         tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.backgroundColor = .clear
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Identifiers.DeckCell)
         return tableView
